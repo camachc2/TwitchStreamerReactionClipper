@@ -5,5 +5,5 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ^j::
 Send, {Alt Down}{PrintScreen}{Alt Up}
-Run, javaw -jar C:\Users\cesar\Documents\NetBeansProjects\StreamerLookup\dist\StreamerLookup.jar 
+Run, javaw -jar <Path to jar file>
 return
