@@ -14,7 +14,7 @@
 ## How does it do it?
 
 1. Run the afk file "run.ahk" waiting for a special key conbination in the background (CTRL j in my case). File toggles on/off automatic screenshots every 2.1 seconds that get processed by the java program in the background. (2.15 seconds being the amount of time it takes for the kill text to disappear)
-2. Play apex legends and toggle the ahk file on.
+2. Play apex legends and toggle automatic screenshots on whenever you're battling outher players.
 3. The java program will automatically try to determine if you get a kill, knock down, or assist. 
 4. OpenCV image processing library crops the image to a 200x40 pixel section of the image that has the text indicating the kill. 
 5. Then taking the laplace and calculating the statistical variance will determine if there's text in that small section of the image.
@@ -33,7 +33,7 @@ If you have played the game Apex Legends you have no doubt ran into twitch strea
 3. Cleaner Code: V2 driver file has smaller more descriptive functions as well as better exception handling. 
 
 ## Why filter the amount of images that go through the process?
-I wanted to balance the amount of work sampling images for usernames vs automation. A toggle offers a good balance determining when I believe I need to start sampling. Additonally, the free ORC API has a limit of 500 images per day, so filtering allows me to stay under the cap. Since the run.ahk takes screenshots every 2.1 seconds, it would take around 18 minutes before I ran out of free OCR processing. OpenCV filters out the grand majority of the useless images created every 2.1 seconds allowing the 500 API to last all day.
+I wanted to balance the amount of work sampling images for usernames vs automation. A toggle offers a good balance determining when I believe I need to start sampling. Additonally, the free ORC API has a limit of 500 images per day, so filtering allows me to stay under the cap. Since the run.ahk takes screenshots every 2.1 seconds, it would take around 18 minutes before I ran out of free OCR processing. OpenCV filters out the grand majority of the useless images created every 2.1 seconds allowing the 500 API calls to last all day.
 
 ## How does the program determine if you get a kill?
 Taking the laplace of an image essentially highlights hard transitions in color in a greyscaled image. The idea is to crop the screenshot only to the part of the image that has the text "ELIMINATION player123" and take the varience. Since a zoomed in image of text would create a lot of hard edges, taking the varience of the laplace is a very good indicator of when you got a kill. When the image has no elimination text the program would take the laplace of a zoomed in picture of the ground usually equating to low varience. 
