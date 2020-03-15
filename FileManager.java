@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.LinkedList;
 import javax.imageio.ImageIO;
 
 /**
@@ -19,8 +17,8 @@ import javax.imageio.ImageIO;
  * @author cesar
  */
 public class FileManager {
-    private final String IMAGE_PATH = "<your image path folder>";
-    private final int LAST_N_SIZE= 10;
+    private final String IMAGE_PATH = "StreamerLookup\\Images\\";
+    private final int LAST_N_SIZE= 30;
     
     //When theres nothing on the cliboard it will throw a java.lang.IllegalArgumentException: image == null!
     public File tryToGetImageFromClipboard() throws UnsupportedFlavorException, IOException{
@@ -33,7 +31,7 @@ public class FileManager {
     }
     
     
-    public void createProfile(String username, File imageFile, String data) throws IOException{
+    public void createDirectory(String username, File imageFile, String data) throws IOException{
         String folderPath = IMAGE_PATH+getDate()+"_"+username+"\\";
         makeUsernameDirectory(folderPath);
         imageFile.renameTo(new File(folderPath+username+".jpg"));

@@ -19,13 +19,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 
-
-
-
-/**
- *
- * @author cesar
- */
 public class TwitchAPI {
     private TwitchBaseURL URL = new TwitchBaseURL();
     private TwitchDashboardInformation DASHBOARD = new TwitchDashboardInformation();    

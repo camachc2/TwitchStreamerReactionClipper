@@ -11,7 +11,6 @@ import java.util.HashMap;
  * @author cesar
  */
 public class UsernameStreamerMap {
-	private String path = "<path for serialized map of originNames - twitchUsername>";
     HashMap<String, String> hmap;
     
     public UsernameStreamerMap(){
@@ -30,7 +29,7 @@ public class UsernameStreamerMap {
     private void fillMap(){
         try
         {
-           FileInputStream fis = new FileInputStream(path);
+           FileInputStream fis = new FileInputStream("usernameStreamerMap.ser");
            ObjectInputStream ois = new ObjectInputStream(fis);
            hmap = (HashMap) ois.readObject();
            ois.close();

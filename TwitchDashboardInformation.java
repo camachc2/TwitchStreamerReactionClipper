@@ -10,7 +10,7 @@ package streamercollector;
  * @author cesar
  */
 class TwitchDashboardInformation {
-    public final String CLIENT_ID = "<your Client-ID>";
-    public final String CLIENT_SECRET = "<your Client Secret>";
-    public final String CALLBACK_URI = "your Client URI";
+    public final String CLIENT_ID = "<your twitch client ID>";
+    public final String CLIENT_SECRET = "<your twitch client secret>";
+    public final String CALLBACK_URI = "<your twitch callback uri>";
 }

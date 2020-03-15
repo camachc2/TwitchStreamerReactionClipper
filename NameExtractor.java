@@ -11,7 +11,7 @@ import org.json.JSONArray;
  * @author cesar
  */
 public class NameExtractor {
-    private final String OCR_KEY = "<your free OCR API key>";
+    private final String OCR_KEY = "<your ocr key>";
     private final String URL = "https://api.ocr.space/parse/image"; 
     private String charset = "UTF-8";
     MultipartUtility multipart = new MultipartUtility(URL, charset, OCR_KEY);
